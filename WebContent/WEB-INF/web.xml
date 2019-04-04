@@ -9,31 +9,22 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
- 	<servlet>
+  <servlet>
     <servlet-name>servletMystudies</servlet-name>
     <servlet-class>vn.edu.vnuk.record.servlet.Mystudies</servlet-class>
-	</servlet>
-
-
-	<servlet-mapping>
-	<servlet-name>servletMystudies</servlet-name>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>servletMystudies</servlet-name>
     <url-pattern>/Mystudies</url-pattern>
-    </servlet-mapping>
-    
-    <error-page>
-    	<error-code>
-    	404
-    	</error-code>
-    	<location>
-    	/404.html
-    	</location>
-    </error-page>
-    <error-page>
-    	<exception-type>
+  </servlet-mapping>
+  <error-page>
+    <error-code>404</error-code>
+    <location>/404.html</location>
+  </error-page>
+  <error-page>
+    <exception-type>
     	java.lang.Exception
     	</exception-type>
-    	<location>
-    	/error.html
-    	</location>
-    </error-page>
+    <location>/error.html</location>
+  </error-page>
 </web-app>

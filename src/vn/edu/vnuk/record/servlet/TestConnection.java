@@ -8,7 +8,6 @@ package vn.edu.vnuk.record.servlet;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
-import java.sql.SQLException;
 
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -17,23 +16,16 @@ import javax.servlet.http.HttpServletResponse;
 
 import vn.edu.vnuk.record.jdbc.ConnectionFactory;
 
-/**
- *
- * @author michel
- */
-@SuppressWarnings({ "serial", "unused" })
+@SuppressWarnings("serial")
 @WebServlet("/test-connection")
 public class TestConnection extends HttpServlet{
-
+	
 	@Override
-	protected void service(HttpServletRequest request,HttpServletResponse response) throws IOException{
-		@SuppressWarnings("unused")
-		PrintWriter out = response.getWriter();
-		
-        try {
+    public void service(HttpServletRequest request, HttpServletResponse response) throws IOException{
+    	PrintWriter out = response.getWriter();
+    	try {
         	Connection connection = new ConnectionFactory().getConnection();
-            
-        	System.out.println("Connection is open!");
+        	out.println("Connection is open!");
             connection.close();
         }
         
@@ -42,7 +34,7 @@ public class TestConnection extends HttpServlet{
         }
         
         finally {
-            System.out.println("Done");
+            out.println("Done");
         }
     }
 }
